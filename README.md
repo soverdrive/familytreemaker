@@ -17,6 +17,8 @@ Simply clone the repo.
 This script outputs a graph descriptor in DOT format. To make the image
 containing the graph, you will need a graph drawer such as [GraphViz] [1].
 
+This script run on python3.
+
 [1]: http://www.graphviz.org/  "GraphViz"
 
 Usage
@@ -33,3 +35,8 @@ It will generate the tree from the infos in `LouisXIVfamily.txt`, starting from
 You can see the result:
 
 ![result: LouisXIVfamily.png](/LouisXIVfamily.png)
+
+Warning
+-----
+This script is sensitive toward indentation. The source file has to be indexed
+with tab (\t) instead of four spaces.
