@@ -84,6 +84,10 @@ class Person:
 
 	def graphviz(self):
 		label = self.name
+		if 'P' in self.attr:
+			label += ' (P)'
+		if 'L' in self.attr:
+			label += ' (L)'
 		if 'surname' in self.attr:
 			label += '\\n« ' + str(self.attr['surname']) + '»'
 		if 'birthday' in self.attr:
@@ -96,8 +100,9 @@ class Person:
 			label += '\\n' + str(self.attr['notes'])
 		opts = ['label="' + label + '"']
 		opts.append('style=filled')
-		opts.append('fillcolor=' + ('F' in self.attr and 'bisque' or
-					('M' in self.attr and 'azure2' or 'white')))
+		opts.append('fillcolor=' + ('X' in self.attr and 'grey' or
+					('L' in self.attr and 'skyblue' or
+					('P' in self.attr and 'pink' or 'white'))))
 		return self.id + '[' + ','.join(opts) + ']'
 
 class Household:
